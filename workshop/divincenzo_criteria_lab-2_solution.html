@@ -15,8 +15,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 <script src="https://unpkg.com/thebelab@0.4.0/lib/index.js" async></script>
 <script src="https://cloud.umami.is/script.js" defer="defer" data-website-id="97f347ac-e7ba-4be3-b26f-ab4b328bdbf2" data-domains="doqumentation.org"></script><link rel="stylesheet" href="/assets/css/styles.e55021e4.css">
-<script src="/assets/js/runtime~main.bf5b630e.js" defer="defer"></script>
-<script src="/assets/js/main.3fcdd980.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.927ea29f.js" defer="defer"></script>
+<script src="/assets/js/main.42c06c76.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -28,11 +28,21 @@
 <p>O físico David DiVincenzo descreveu cinco requisitos-chave para qualquer implementação física de um computador quântico, além de dois critérios adicionais para comunicação quântica. Neste notebook, <strong>vivenciaremos cada critério de DiVincenzo por meio de demonstrações práticas com Qiskit</strong>. Em vez de aprofundarmos na teoria, cada seção explica brevemente um critério e, em seguida, fornece exercícios de código usando Qiskit 2. Você poderá executar circuitos em simuladores e em dispositivos reais IBM Quantum para <strong>explorar cada princípio na prática</strong>.</p>
 <p><strong>Os Cinco Critérios de DiVincenzo para Computação Quântica</strong>:</p>
 <ol>
-<li class=""><strong>Um sistema físico escalável com qubits bem caracterizados.</strong></li>
-<li class=""><strong>Capacidade de inicializar qubits</strong> em um estado fiducial simples (por exemplo, |00…0〉).</li>
-<li class=""><strong>Tempos de decoerência longos</strong> (coerência do qubit muito maior que o tempo de operação da porta).</li>
-<li class=""><strong>Um conjunto universal de portas quânticas</strong> (capaz de realizar operações unitárias arbitrárias).</li>
-<li class=""><strong>Capacidade de medição específica do qubit</strong> (ler o estado de cada qubit).</li>
+<li class="">
+<p><strong>Um sistema físico escalável com qubits bem caracterizados.</strong></p>
+</li>
+<li class="">
+<p><strong>Capacidade de inicializar qubits</strong> em um estado fiducial simples (por exemplo, |00…0〉).</p>
+</li>
+<li class="">
+<p><strong>Tempos de decoerência longos</strong> (coerência do qubit muito maior que o tempo de operação da porta).</p>
+</li>
+<li class="">
+<p><strong>Um conjunto universal de portas quânticas</strong> (capaz de realizar operações unitárias arbitrárias).</p>
+</li>
+<li class="">
+<p><strong>Capacidade de medição específica do qubit</strong> (ler o estado de cada qubit).</p>
+</li>
 </ol>
 <p><em>(DiVincenzo também descreveu dois critérios para comunicação quântica: a capacidade de interconverter qubits estacionários e &quot;voadores&quot;, e de transmitir fielmente qubits voadores entre locais. Incluímos esses em uma atividade recomendada ao final deste notebook.)</em></p>
 <p>Cada uma das seções a seguir corresponde a um critério. Usaremos Qiskit para ilustrar o conceito com código e <strong>experimentos interativos</strong> que você pode tentar. Por exemplo, veremos como aumentar o número de qubits e a profundidade do circuito afeta os resultados (Critério 1), como redefinir e preparar estados de qubit (Critério 2), como medir qubits em simuladores vs dispositivos reais (Critério 4), como o Qiskit compõe portas universais (Critério 3) e como a coerência finita (T₁, T₂) impacta os cálculos (Critério 5). Ao final, você terá uma intuição mais profunda sobre o que cada critério de DiVincenzo significa na prática e como o Qiskit permite experimentar com eles.</p>
@@ -140,8 +150,12 @@ Você deve observar a probabilidade <code>P(qubit=1)</code> diminuindo à medida
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="quantum-communication-criteria-flying-qubits">Critérios de Comunicação Quântica (qubits Voadores)<a href="#quantum-communication-criteria-flying-qubits" class="hash-link" aria-label="Link direto para Critérios de Comunicação Quântica (qubits Voadores)" title="Link direto para Critérios de Comunicação Quântica (qubits Voadores)" translate="no">​</a></h2>
 <p>DiVincenzo também listou dois critérios específicos para a comunicação quântica, importantes ao construir um computador quântico em rede:</p>
 <ol start="6">
-<li class=""><strong>Capacidade de interconverter qubits estacionários e voadores.</strong> (Por exemplo, mapear um qubit em um processador para um fóton que pode viajar.)</li>
-<li class=""><strong>Capacidade de transmitir fielmente qubits voadores entre locais.</strong> (Por exemplo, enviar um qubit-fóton através de uma fibra sem perder informação quântica.)</li>
+<li class="">
+<p><strong>Capacidade de interconverter qubits estacionários e voadores.</strong> (Por exemplo, mapear um qubit em um processador para um fóton que pode viajar.)</p>
+</li>
+<li class="">
+<p><strong>Capacidade de transmitir fielmente qubits voadores entre locais.</strong> (Por exemplo, enviar um qubit-fóton através de uma fibra sem perder informação quântica.)</p>
+</li>
 </ol>
 <p>Esses estão além do uso padrão do Qiskit, pois o Qiskit lida principalmente com qubits estacionários em um chip. No entanto, podemos ilustrar o <em>conceito</em> desses critérios com um exemplo simples: <strong>teletransporte quântico</strong>. O teletransporte mostra a conversão do estado de um qubit estacionário em informações carregadas por um par emaranhado (a parte &quot;voadora&quot;) e comunicação clássica, que é então usada para reconstruir o estado em outro qubit estacionário em outro lugar.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="recommended-activity-take-the-qiskit-in-classrooms-quantum-teleportation-module">Atividade recomendada: Faça o módulo <em>Teletransporte Quântico</em> do Qiskit in Classrooms<a href="#recommended-activity-take-the-qiskit-in-classrooms-quantum-teleportation-module" class="hash-link" aria-label="Link direto para recommended-activity-take-the-qiskit-in-classrooms-quantum-teleportation-module" title="Link direto para recommended-activity-take-the-qiskit-in-classrooms-quantum-teleportation-module" translate="no">​</a></h3>
@@ -151,11 +165,21 @@ Você deve observar a probabilidade <code>P(qubit=1)</code> diminuindo à medida
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="conclusion-summary">Conclusão &amp; Resumo<a href="#conclusion-summary" class="hash-link" aria-label="Link direto para Conclusão &amp; Resumo" title="Link direto para Conclusão &amp; Resumo" translate="no">​</a></h2>
 <p>Projetamos uma série de exercícios focados em código para ilustrar os critérios de DiVincenzo usando Qiskit. Por meio desses exemplos práticos, você explorou como uma plataforma real de computação quântica atende a cada requisito:</p>
 <ul>
-<li class=""><strong>Escalabilidade</strong>: construir circuitos em mais qubits e entender o escalonamento do ruído.</li>
-<li class=""><strong>Inicialização</strong>: usar resets e preparação de estado para iniciar computações de forma confiável em estados conhecidos.</li>
-<li class=""><strong>Portas Universais</strong>: transpilar operações complexas para as portas básicas de uma máquina, provando que podemos realizar qualquer computação.</li>
-<li class=""><strong>Medição</strong>: ler qubits e lidar com erros realistas de leitura.</li>
-<li class=""><strong>Coerência</strong>: ver o efeito de T₁, T₂ finitos sobre a fidelidade do algoritmo e a necessidade de operações serem rápidas em relação à decoerência.</li>
+<li class="">
+<p><strong>Escalabilidade</strong>: construir circuitos em mais qubits e entender o escalonamento do ruído.</p>
+</li>
+<li class="">
+<p><strong>Inicialização</strong>: usar resets e preparação de estado para iniciar computações de forma confiável em estados conhecidos.</p>
+</li>
+<li class="">
+<p><strong>Portas Universais</strong>: transpilar operações complexas para as portas básicas de uma máquina, provando que podemos realizar qualquer computação.</p>
+</li>
+<li class="">
+<p><strong>Medição</strong>: ler qubits e lidar com erros realistas de leitura.</p>
+</li>
+<li class="">
+<p><strong>Coerência</strong>: ver o efeito de T₁, T₂ finitos sobre a fidelidade do algoritmo e a necessidade de operações serem rápidas em relação à decoerência.</p>
+</li>
 </ul>
 <p>Para completar, também abordamos aspectos da comunicação quântica por meio do módulo <a href="https://quantum.cloud.ibm.com/learning/en/modules/computer-science/quantum-teleportation" target="_blank" rel="noopener noreferrer" class="">Teletransporte Quântico</a> do Qiskit in Classrooms, conectando os dois últimos critérios (qubits voadores).</p>
 <p>Por fim, vale notar como esses critérios se reúnem em um computador quântico real como o da IBM. Um dispositivo como <strong>ibmq_brisbane</strong> tem 127 qubits supercondutores (Critério 1), cada um começando em |0〉 (Critério 2), com conjunto de portas calibrado e compiladores para universalidade (Critério 4), ressonadores de leitura por micro-ondas para cada qubit (Critério 5) e tempos de coerência da ordem de centenas de microssegundos vs operações em nanossegundos (Critério 3). Para experimentos de redes quânticas, a IBM e outros estão explorando a transdução de micro-ondas para óptica para qubits voadores, e o emaranhamento de qubits distantes (Critérios 6 &amp; 7); essas são áreas de pesquisa ativa.</p>

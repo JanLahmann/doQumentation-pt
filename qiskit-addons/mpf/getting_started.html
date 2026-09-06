@@ -15,8 +15,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 <script src="https://unpkg.com/thebelab@0.4.0/lib/index.js" async></script>
 <script src="https://cloud.umami.is/script.js" defer="defer" data-website-id="97f347ac-e7ba-4be3-b26f-ab4b328bdbf2" data-domains="doqumentation.org"></script><link rel="stylesheet" href="/assets/css/styles.e55021e4.css">
-<script src="/assets/js/runtime~main.bf5b630e.js" defer="defer"></script>
-<script src="/assets/js/main.3fcdd980.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.927ea29f.js" defer="defer"></script>
+<script src="/assets/js/main.42c06c76.js" defer="defer"></script>
 <link data-rh-hreflang rel="alternate" hreflang="en" href="https://doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="de" href="https://de.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="es" href="https://es.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="fr" href="https://fr.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="it" href="https://it.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="pt" href="https://pt.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="ja" href="https://ja.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="fil" href="https://tl.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="ar" href="https://ar.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="he" href="https://he.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="ms" href="https://ms.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="id" href="https://id.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="th" href="https://th.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="ko" href="https://ko.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="pl" href="https://pl.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="ro" href="https://ro.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="uk" href="https://uk.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="cs" href="https://cs.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="swg" href="https://swg.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="de" href="https://bad.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="bar" href="https://bar.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="ksh" href="https://ksh.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="nds" href="https://nds.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="gsw" href="https://gsw.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="de" href="https://sax.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="de" href="https://bln.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="de-AT" href="https://aut.doqumentation.org/qiskit-addons/mpf/getting_started" /><link data-rh-hreflang rel="alternate" hreflang="x-default" href="https://doqumentation.org/qiskit-addons/mpf/getting_started" /></head>
 <body>
 <svg style="display: none;"><defs>
@@ -28,25 +28,31 @@
 <p>Neste notebook, você aprenderá a usar uma <strong>Fórmula Multi-Produto (MPF)</strong> para alcançar um erro de Trotter menor em nosso observável em comparação com aquele incorrido pelo circuito de Trotter mais profundo que de fato executaremos.
 Você fará isso percorrendo as etapas de um <strong>Qiskit pattern</strong>:</p>
 <ul>
-<li class=""><strong>Etapa 1: Mapear para o problema quântico</strong>
+<li class="">
+<p><strong>Etapa 1: Mapear para o problema quântico</strong></p>
 <ul>
-<li class="">Inicializar o Hamiltoniano do nosso problema</li>
+<li class="">
+<p>Inicializar o Hamiltoniano do nosso problema</p>
+</li>
 <li class="">
 <font color="#0F62FE">Usar uma MPF para gerar os circuitos de evolução temporal Trotterizados</font>
 </li>
 </ul>
 </li>
-<li class=""><strong>Etapa 2: Otimizar o problema</strong>
+<li class="">
+<p><strong>Etapa 2: Otimizar o problema</strong></p>
 <ul>
 <li class="">Aqui, transpilamos nossos circuitos para um <a href="https://quantum.cloud.ibm.com/docs/api/qiskit/qiskit.providers.fake_provider.GenericBackendV2" target="_blank" rel="noopener noreferrer" class="">GenericBackendV2</a></li>
 </ul>
 </li>
-<li class=""><strong>Etapa 3: Executar experimentos</strong>
+<li class="">
+<p><strong>Etapa 3: Executar experimentos</strong></p>
 <ul>
 <li class="">Usar um <a href="https://quantum.cloud.ibm.com/docs/api/qiskit/qiskit.primitives.StatevectorEstimator" target="_blank" rel="noopener noreferrer" class="">StatevectorEstimator</a> por simplicidade neste notebook</li>
 </ul>
 </li>
-<li class=""><strong>Etapa 4: Reconstruir resultados</strong>
+<li class="">
+<p><strong>Etapa 4: Reconstruir resultados</strong></p>
 <ul>
 <li class="">
 <font color="#0F62FE">Calcular o valor esperado da MPF</font>
@@ -81,8 +87,12 @@ Esse grafo pode ser tanto um <a href="https://www.rustworkx.org/apiref/rustworkx
 <p>A chave aqui é que o erro de Trotter remanescente é menor do que o erro de Trotter que se obteria simplesmente usando o maior valor de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">k_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9805em;vertical-align:-0.2861em"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em"><span style="top:-2.55em;margin-left:-0.0315em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em"><span></span></span></span></span></span></span></span></span></span>!</p>
 <p>Você pode encarar a utilidade da MPF de duas perspectivas:</p>
 <ol>
-<li class="">Para um orçamento fixo de etapas de Trotter que você é capaz de executar, você pode obter resultados com um erro de Trotter total menor.</li>
-<li class="">Para um número de etapas de Trotter que resultam em circuitos profundos, você pode usar a MPF para encontrar vários circuitos de menor profundidade para executar que resultam em um erro de Trotter semelhante.</li>
+<li class="">
+<p>Para um orçamento fixo de etapas de Trotter que você é capaz de executar, você pode obter resultados com um erro de Trotter total menor.</p>
+</li>
+<li class="">
+<p>Para um número de etapas de Trotter que resultam em circuitos profundos, você pode usar a MPF para encontrar vários circuitos de menor profundidade para executar que resultam em um erro de Trotter semelhante.</p>
+</li>
 </ol>
 <h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="an-introduction-to-static-mpfs">Uma introdução às MPFs estáticas<a href="#an-introduction-to-static-mpfs" class="hash-link" aria-label="Link direto para Uma introdução às MPFs estáticas" title="Link direto para Uma introdução às MPFs estáticas" translate="no">​</a></h4>
 <p>MPFs <em>estáticas</em> são aquelas em que os valores de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">x_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em"><span></span></span></span></span></span></span></span></span></span> <strong>NÃO</strong> dependem do tempo de evolução, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6151em"></span><span class="mord mathnormal">t</span></span></span></span>.</p>

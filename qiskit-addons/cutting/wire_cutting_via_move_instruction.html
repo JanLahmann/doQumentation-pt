@@ -15,8 +15,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 <script src="https://unpkg.com/thebelab@0.4.0/lib/index.js" async></script>
 <script src="https://cloud.umami.is/script.js" defer="defer" data-website-id="97f347ac-e7ba-4be3-b26f-ab4b328bdbf2" data-domains="doqumentation.org"></script><link rel="stylesheet" href="/assets/css/styles.e55021e4.css">
-<script src="/assets/js/runtime~main.bf5b630e.js" defer="defer"></script>
-<script src="/assets/js/main.3fcdd980.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.927ea29f.js" defer="defer"></script>
+<script src="/assets/js/main.42c06c76.js" defer="defer"></script>
 <link data-rh-hreflang rel="alternate" hreflang="en" href="https://doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="de" href="https://de.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="es" href="https://es.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="fr" href="https://fr.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="it" href="https://it.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="pt" href="https://pt.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="ja" href="https://ja.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="fil" href="https://tl.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="ar" href="https://ar.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="he" href="https://he.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="ms" href="https://ms.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="id" href="https://id.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="th" href="https://th.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="ko" href="https://ko.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="pl" href="https://pl.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="ro" href="https://ro.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="uk" href="https://uk.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="cs" href="https://cs.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="swg" href="https://swg.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="de" href="https://bad.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="bar" href="https://bar.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="ksh" href="https://ksh.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="nds" href="https://nds.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="gsw" href="https://gsw.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="de" href="https://sax.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="de" href="https://bln.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="de-AT" href="https://aut.doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /><link data-rh-hreflang rel="alternate" hreflang="x-default" href="https://doqumentation.org/qiskit-addons/cutting/wire_cutting_via_move_instruction" /></head>
 <body>
 <svg style="display: none;"><defs>
@@ -28,25 +28,31 @@
 <p>Neste tutorial, reconstruiremos os valores esperados de um circuito de sete qubits dividindo-o em dois circuitos de quatro qubits usando wire cutting.</p>
 <p>Estas são as etapas que vamos seguir neste <a href="https://quantum.cloud.ibm.com/docs/guides/intro-to-patterns" target="_blank" rel="noopener noreferrer" class="">padrão Qiskit</a>:</p>
 <ul>
-<li class=""><strong>Etapa 1: Mapear o problema para circuitos quânticos e operadores</strong>:<!-- -->
+<li class="">
+<p><strong>Etapa 1: Mapear o problema para circuitos quânticos e operadores</strong>:</p>
 <ul>
 <li class="">Mapear o hamiltoniano em um circuito quântico.</li>
 </ul>
 </li>
-<li class=""><strong>Etapa 2: Otimizar para o hardware alvo</strong> [<em>Usa o cutting addon</em>]:<!-- -->
+<li class="">
+<p><strong>Etapa 2: Otimizar para o hardware alvo</strong> [<em>Usa o cutting addon</em>]:</p>
 <ul>
 <li class="">
 <font color="#0F62FE">Cortar o circuito e o observável.</font>
 </li>
-<li class="">Transpilar os subexperimentos para o hardware.</li>
+<li class="">
+<p>Transpilar os subexperimentos para o hardware.</p>
+</li>
 </ul>
 </li>
-<li class=""><strong>Etapa 3: Executar no hardware alvo</strong>:<!-- -->
+<li class="">
+<p><strong>Etapa 3: Executar no hardware alvo</strong>:</p>
 <ul>
 <li class="">Executar os subexperimentos obtidos na Etapa 2 usando uma primitiva <code>Sampler</code>.</li>
 </ul>
 </li>
-<li class=""><strong>Etapa 4: Pós-processar os resultados</strong> [<em>Usa o cutting addon</em>]:<!-- -->
+<li class="">
+<p><strong>Etapa 4: Pós-processar os resultados</strong> [<em>Usa o cutting addon</em>]:</p>
 <ul>
 <li class="">
 <font color="#0F62FE">Combinar os resultados da Etapa 3 para reconstruir o valor esperado do observável em questão.</font>
