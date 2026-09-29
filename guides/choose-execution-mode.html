@@ -14,8 +14,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 <script src="https://unpkg.com/thebelab@0.4.0/lib/index.js" async></script>
 <script src="https://cloud.umami.is/script.js" defer="defer" data-website-id="97f347ac-e7ba-4be3-b26f-ab4b328bdbf2" data-domains="doqumentation.org"></script><link rel="stylesheet" href="/assets/css/styles.d115d309.css">
-<script src="/assets/js/runtime~main.cca395b7.js" defer="defer"></script>
-<script src="/assets/js/main.c49b305c.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.0e907d9c.js" defer="defer"></script>
+<script src="/assets/js/main.7f353905.js" defer="defer"></script>
 <link data-rh-hreflang rel="alternate" hreflang="en" href="https://doqumentation.org/guides/choose-execution-mode" /><link data-rh-hreflang rel="alternate" hreflang="de" href="https://de.doqumentation.org/guides/choose-execution-mode" /><link data-rh-hreflang rel="alternate" hreflang="es" href="https://es.doqumentation.org/guides/choose-execution-mode" /><link data-rh-hreflang rel="alternate" hreflang="fr" href="https://fr.doqumentation.org/guides/choose-execution-mode" /><link data-rh-hreflang rel="alternate" hreflang="it" href="https://it.doqumentation.org/guides/choose-execution-mode" /><link data-rh-hreflang rel="alternate" hreflang="pt" href="https://pt.doqumentation.org/guides/choose-execution-mode" /><link data-rh-hreflang rel="alternate" hreflang="ja" href="https://ja.doqumentation.org/guides/choose-execution-mode" /><link data-rh-hreflang rel="alternate" hreflang="fil" href="https://tl.doqumentation.org/guides/choose-execution-mode" /><link data-rh-hreflang rel="alternate" hreflang="ar" href="https://ar.doqumentation.org/guides/choose-execution-mode" /><link data-rh-hreflang rel="alternate" hreflang="he" href="https://he.doqumentation.org/guides/choose-execution-mode" /><link data-rh-hreflang rel="alternate" hreflang="ms" href="https://ms.doqumentation.org/guides/choose-execution-mode" /><link data-rh-hreflang rel="alternate" hreflang="id" href="https://id.doqumentation.org/guides/choose-execution-mode" /><link data-rh-hreflang rel="alternate" hreflang="th" href="https://th.doqumentation.org/guides/choose-execution-mode" /><link data-rh-hreflang rel="alternate" hreflang="ko" href="https://ko.doqumentation.org/guides/choose-execution-mode" /><link data-rh-hreflang rel="alternate" hreflang="pl" href="https://pl.doqumentation.org/guides/choose-execution-mode" /><link data-rh-hreflang rel="alternate" hreflang="ro" href="https://ro.doqumentation.org/guides/choose-execution-mode" /><link data-rh-hreflang rel="alternate" hreflang="uk" href="https://uk.doqumentation.org/guides/choose-execution-mode" /><link data-rh-hreflang rel="alternate" hreflang="cs" href="https://cs.doqumentation.org/guides/choose-execution-mode" /><link data-rh-hreflang rel="alternate" hreflang="x-default" href="https://doqumentation.org/guides/choose-execution-mode" /></head>
 <body>
 <svg style="display: none;"><defs>
@@ -57,7 +57,7 @@
 <p>Acesso dedicado e exclusivo à QPU durante a janela ativa da sessão.</p>
 </li>
 <li class="">
-<p>Útil para cargas de trabalho que não têm todas as entradas prontas no início, para cargas de trabalho iterativas que exigem pós-processamento clássico antes que a próxima possa ser executada, e para experimentos que precisam ser executados o mais próximo possível.</p>
+<p>Útil para cargas de trabalho que não têm todas as entradas prontas no início, para cargas de trabalho iterativas que exigem pós-processamento clássico antes que a próxima possa ser executada, e para experimentos que precisam ser executados o mais próximos possível no tempo.</p>
 </li>
 </ul>
 </li>
@@ -96,7 +96,7 @@
 <p>Para garantir o uso mais eficiente dos modos de execução, as seguintes práticas são recomendadas:</p>
 <ul>
 <li class="">
-<p>Há uma sobrecarga fixa associada à execução de um job. Em geral, se cada um dos seus jobs usa menos de um minuto de <em>tempo de QPU</em>, considere combinar vários em um job maior (isso se aplica a todos os modos de execução). &quot;Tempo de QPU&quot; refere-se ao tempo gasto pelo complexo QPU para processar seu job.</p>
+<p>Há uma sobrecarga fixa associada à execução de um job. Em geral, se cada um dos seus jobs usa menos de um minuto de <em>tempo de QPU</em>, considere combinar vários em um job maior (isso se aplica a todos os modos de execução). &quot;Tempo de QPU&quot; refere-se ao tempo gasto pelo complexo da QPU para processar seu job.</p>
 </li>
 <li class="">
 <p>Se cada um dos seus jobs consome mais de um minuto de tempo de QPU, ou se combinar jobs não for prático, você ainda pode executar vários jobs em paralelo. Cada job passa por processamento clássico e quântico. Embora uma QPU possa processar apenas um job por vez, até cinco jobs clássicos podem ser processados em paralelo. Você pode aproveitar isso enviando vários jobs no modo de execução <a class="" href="/guides/run-jobs-batch#partition">batch</a> ou <a class="" href="/guides/run-jobs-session#two-vqe">session</a>.</p>
@@ -114,13 +114,13 @@
 <p>Avaliar a função de custo em uma QPU.</p>
 </li>
 <li class="">
-<p>Pegar o resultado da etapa anterior e executá-lo por meio de um otimizador clássico.</p>
+<p>Pegar o resultado da etapa anterior e passá-lo a um otimizador clássico.</p>
 </li>
 <li class="">
 <p>Ajustar os parâmetros de acordo com a saída de (3) e voltar à etapa (2).</p>
 </li>
 </ol>
-<p>Nesse caso, se você estiver usando o modo job ou batch, cada job gerado pela etapa (2) precisa voltar para a fila. Isso aumenta drasticamente a duração do experimento (wall-clock time) devido ao tempo de fila. Também pode levar mais tempo para convergir devido à deriva do dispositivo (device drift). Ou seja, espera-se que cada iteração produza um resultado melhor, mas a deriva do dispositivo pode piorar os resultados subsequentes.</p>
+<p>Nesse caso, se você estiver usando o modo job ou batch, cada job gerado pela etapa (2) precisa voltar para a fila. Isso aumenta drasticamente a duração do experimento (tempo de relógio de parede, ou wall-clock time) devido ao tempo de fila. Também pode levar mais tempo para convergir devido à deriva do dispositivo (device drift). Ou seja, espera-se que cada iteração produza um resultado melhor, mas a deriva do dispositivo pode piorar os resultados subsequentes.</p>
 <p>Além disso, se você usar <a class="" href="/guides/error-mitigation-and-suppression-techniques#pea">PEA</a> ou <a class="" href="/guides/error-mitigation-and-suppression-techniques#pec">PEC</a>, pode <a class="" href="/guides/noise-learning">aprender o modelo de ruído</a> uma vez e aplicá-lo a jobs subsequentes ao executar em uma sessão dedicada. Isso geralmente não funciona com o modo batch ou job, porque o modelo de ruído pode ficar desatualizado quando o próximo job sair da fila.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="compare-error-mitigation-settings">Comparar configurações de mitigação de erros<a href="#compare-error-mitigation-settings" class="hash-link" aria-label="Link direto para Comparar configurações de mitigação de erros" title="Link direto para Comparar configurações de mitigação de erros" translate="no">​</a></h3>
 <p>Para comparar os efeitos dos métodos de mitigação de erros disponíveis, você pode seguir este fluxo:</p>
