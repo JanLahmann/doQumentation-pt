@@ -14,8 +14,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 <script src="https://unpkg.com/thebelab@0.4.0/lib/index.js" async></script>
 <script src="https://cloud.umami.is/script.js" defer="defer" data-website-id="97f347ac-e7ba-4be3-b26f-ab4b328bdbf2" data-domains="doqumentation.org"></script><link rel="stylesheet" href="/assets/css/styles.d115d309.css">
-<script src="/assets/js/runtime~main.72b1e2a5.js" defer="defer"></script>
-<script src="/assets/js/main.2f440570.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.ad226674.js" defer="defer"></script>
+<script src="/assets/js/main.fe7170de.js" defer="defer"></script>
 <link data-rh-hreflang rel="alternate" hreflang="en" href="https://doqumentation.org/guides/migrate-to-client-side-primitives" /><link data-rh-hreflang rel="alternate" hreflang="de" href="https://de.doqumentation.org/guides/migrate-to-client-side-primitives" /><link data-rh-hreflang rel="alternate" hreflang="es" href="https://es.doqumentation.org/guides/migrate-to-client-side-primitives" /><link data-rh-hreflang rel="alternate" hreflang="fr" href="https://fr.doqumentation.org/guides/migrate-to-client-side-primitives" /><link data-rh-hreflang rel="alternate" hreflang="it" href="https://it.doqumentation.org/guides/migrate-to-client-side-primitives" /><link data-rh-hreflang rel="alternate" hreflang="pt" href="https://pt.doqumentation.org/guides/migrate-to-client-side-primitives" /><link data-rh-hreflang rel="alternate" hreflang="ja" href="https://ja.doqumentation.org/guides/migrate-to-client-side-primitives" /><link data-rh-hreflang rel="alternate" hreflang="fil" href="https://tl.doqumentation.org/guides/migrate-to-client-side-primitives" /><link data-rh-hreflang rel="alternate" hreflang="ar" href="https://ar.doqumentation.org/guides/migrate-to-client-side-primitives" /><link data-rh-hreflang rel="alternate" hreflang="he" href="https://he.doqumentation.org/guides/migrate-to-client-side-primitives" /><link data-rh-hreflang rel="alternate" hreflang="ms" href="https://ms.doqumentation.org/guides/migrate-to-client-side-primitives" /><link data-rh-hreflang rel="alternate" hreflang="id" href="https://id.doqumentation.org/guides/migrate-to-client-side-primitives" /><link data-rh-hreflang rel="alternate" hreflang="th" href="https://th.doqumentation.org/guides/migrate-to-client-side-primitives" /><link data-rh-hreflang rel="alternate" hreflang="ko" href="https://ko.doqumentation.org/guides/migrate-to-client-side-primitives" /><link data-rh-hreflang rel="alternate" hreflang="pl" href="https://pl.doqumentation.org/guides/migrate-to-client-side-primitives" /><link data-rh-hreflang rel="alternate" hreflang="ro" href="https://ro.doqumentation.org/guides/migrate-to-client-side-primitives" /><link data-rh-hreflang rel="alternate" hreflang="uk" href="https://uk.doqumentation.org/guides/migrate-to-client-side-primitives" /><link data-rh-hreflang rel="alternate" hreflang="cs" href="https://cs.doqumentation.org/guides/migrate-to-client-side-primitives" /><link data-rh-hreflang rel="alternate" hreflang="x-default" href="https://doqumentation.org/guides/migrate-to-client-side-primitives" /></head>
 <body>
 <svg style="display: none;"><defs>
@@ -149,7 +149,7 @@ que os caminhos de opções e os tipos de valores estão corretos.</p>
 </li>
 <li class="">
 <p><code>NoiseLearnerV3</code> <strong>não tem modo de teste local</strong>: seu <code>mode</code> aceita apenas um <code>Backend</code>,
-<code>Session</code> ou <code>Batch</code> reais, então você não pode exercitar a etapa de aprendizado de ruído contra um backend
+<code>Session</code> ou <code>Batch</code> reais, então não é possível testar a etapa de aprendizado de ruído com um backend
 falso. Em vez disso, verifique essa parte do seu código com a
 <a href="https://docs.quantum.ibm.com/api/qiskit-ibm-runtime/noise-learner-v3-noise-learner-v3" target="_blank" rel="noopener noreferrer" class="">referência de API do <code>NoiseLearnerV3</code></a>. Confirme que o construtor,
 o formato de entrada de <code>run(instructions)</code>, e qualquer helper (como o helper de camadas distintas) sejam
@@ -172,11 +172,11 @@ ao construir o PUB local:</p>
 <li class="">
 <p><strong>O atributo <code>.layout</code> é descartado.</strong> O circuito Cliffordizado mantém o mesmo número de
 qubits, mas <code>clifford.layout</code> é <code>None</code>, então <code>observable.apply_layout(clifford.layout)</code>
-falha. Em vez disso, disponha o observável a partir do circuito ISA <strong>pré-Clifford</strong>:
+falha. Em vez disso, aplique ao observável o layout do circuito ISA <strong>pré-Clifford</strong>:
 <code>isa_obs = observable.apply_layout(isa_circuit.layout)</code>, e então execute <code>(clifford, isa_obs)</code>.</p>
 </li>
 <li class="">
-<p><strong>Os parâmetros são vinculados e removidos.</strong> Arredondar os ângulos de rotação transforma um circuito ISA paramétrico
+<p><strong>Os parâmetros deixam de existir.</strong> Arredondar os ângulos de rotação transforma um circuito ISA paramétrico
 em um circuito de Clifford concreto, então <code>clifford.num_parameters</code> se torna <code>0</code>. Um PUB que ainda
 carrega um array de valores de parâmetros falha na coerção. Para a execução local, remova o array de parâmetros
 do PUB; a execução no hardware mantém o circuito paramétrico original e seus valores.</p>

@@ -14,8 +14,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 <script src="https://unpkg.com/thebelab@0.4.0/lib/index.js" async></script>
 <script src="https://cloud.umami.is/script.js" defer="defer" data-website-id="97f347ac-e7ba-4be3-b26f-ab4b328bdbf2" data-domains="doqumentation.org"></script><link rel="stylesheet" href="/assets/css/styles.d115d309.css">
-<script src="/assets/js/runtime~main.72b1e2a5.js" defer="defer"></script>
-<script src="/assets/js/main.2f440570.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.ad226674.js" defer="defer"></script>
+<script src="/assets/js/main.fe7170de.js" defer="defer"></script>
 <link data-rh-hreflang rel="alternate" hreflang="en" href="https://doqumentation.org/guides/migrate-from-sampler-to-executor" /><link data-rh-hreflang rel="alternate" hreflang="de" href="https://de.doqumentation.org/guides/migrate-from-sampler-to-executor" /><link data-rh-hreflang rel="alternate" hreflang="es" href="https://es.doqumentation.org/guides/migrate-from-sampler-to-executor" /><link data-rh-hreflang rel="alternate" hreflang="fr" href="https://fr.doqumentation.org/guides/migrate-from-sampler-to-executor" /><link data-rh-hreflang rel="alternate" hreflang="it" href="https://it.doqumentation.org/guides/migrate-from-sampler-to-executor" /><link data-rh-hreflang rel="alternate" hreflang="pt" href="https://pt.doqumentation.org/guides/migrate-from-sampler-to-executor" /><link data-rh-hreflang rel="alternate" hreflang="ja" href="https://ja.doqumentation.org/guides/migrate-from-sampler-to-executor" /><link data-rh-hreflang rel="alternate" hreflang="fil" href="https://tl.doqumentation.org/guides/migrate-from-sampler-to-executor" /><link data-rh-hreflang rel="alternate" hreflang="ar" href="https://ar.doqumentation.org/guides/migrate-from-sampler-to-executor" /><link data-rh-hreflang rel="alternate" hreflang="he" href="https://he.doqumentation.org/guides/migrate-from-sampler-to-executor" /><link data-rh-hreflang rel="alternate" hreflang="ms" href="https://ms.doqumentation.org/guides/migrate-from-sampler-to-executor" /><link data-rh-hreflang rel="alternate" hreflang="id" href="https://id.doqumentation.org/guides/migrate-from-sampler-to-executor" /><link data-rh-hreflang rel="alternate" hreflang="th" href="https://th.doqumentation.org/guides/migrate-from-sampler-to-executor" /><link data-rh-hreflang rel="alternate" hreflang="ko" href="https://ko.doqumentation.org/guides/migrate-from-sampler-to-executor" /><link data-rh-hreflang rel="alternate" hreflang="pl" href="https://pl.doqumentation.org/guides/migrate-from-sampler-to-executor" /><link data-rh-hreflang rel="alternate" hreflang="ro" href="https://ro.doqumentation.org/guides/migrate-from-sampler-to-executor" /><link data-rh-hreflang rel="alternate" hreflang="uk" href="https://uk.doqumentation.org/guides/migrate-from-sampler-to-executor" /><link data-rh-hreflang rel="alternate" hreflang="cs" href="https://cs.doqumentation.org/guides/migrate-from-sampler-to-executor" /><link data-rh-hreflang rel="alternate" hreflang="x-default" href="https://doqumentation.org/guides/migrate-from-sampler-to-executor" /></head>
 <body>
 <svg style="display: none;"><defs>
@@ -31,7 +31,7 @@ para a primitiva Executor.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="should-you-migrate">Você deve migrar?<a href="#should-you-migrate" class="hash-link" aria-label="Link direto para Você deve migrar?" title="Link direto para Você deve migrar?" translate="no">​</a></h2>
 <p>Nem todos devem migrar do Sampler para o Executor.  Há muitas diferenças entre as primitivas, mas a orientação a seguir pode ajudá-lo a decidir se deve migrar:</p>
 <p><strong>Migre para o Executor</strong> se você é um cientista de informação quântica que executa
-experimentos em escala utilitária e precisa de controle refinado e reproduzível sobre
+experimentos em escala de utilidade e precisa de controle refinado e reproduzível sobre
 técnicas como Pauli twirling, aprendizado e injeção de modelo de ruído, e mudanças de
 base — ou que precisa de uma das capacidades adicionais fornecidas pelo Executor.</p>
 <p><strong>Continue usando o Sampler</strong> se você quiser uma interface simples e de alto nível e quiser que a primitiva gerencie a supressão e mitigação de erros para você.</p>
@@ -56,8 +56,8 @@ descreve intencionalmente apenas o fluxo de trabalho do Sampler.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="key-differences-between-executor-and-sampler">Principais diferenças entre Executor e Sampler<a href="#key-differences-between-executor-and-sampler" class="hash-link" aria-label="Link direto para Principais diferenças entre Executor e Sampler" title="Link direto para Principais diferenças entre Executor e Sampler" translate="no">​</a></h2>
-<p>O Sampler e o Executor ambos amostram os registradores de saída de circuitos quânticos, mas eles
-são voltados para usuários diferentes:</p>
+<p>Tanto o Sampler quanto o Executor amostram os registradores de saída de circuitos quânticos, mas são
+voltados para usuários diferentes:</p>
 <ul>
 <li class="">
 <p><strong>Sampler</strong> é uma abstração de alto nível. Ele tem as seguintes características:</p>
@@ -289,7 +289,7 @@ Você precisa aplicá-las manualmente; nada é corrigido implicitamente.</p>
 <li class=""><a class="" href="/guides/get-started-with-executor">Início rápido do Executor</a></li>
 <li class=""><a class="" href="/guides/executor-input-output">Entradas e saídas do Executor</a></li>
 <li class=""><a class="" href="/guides/executor-options">Opções do Executor</a></li>
-<li class=""><a class="" href="/guides/directed-execution-model">Modelo de execução direcionada</a></li>
+<li class=""><a class="" href="/guides/directed-execution-model">Modelo de execução dirigida</a></li>
 <li class=""><a class="" href="/guides/get-started-with-sampler">Início rápido do Sampler</a></li>
 <li class=""><a class="" href="/guides/sampler-input-output">Entradas e saídas do Sampler</a></li>
 <li class=""><a href="https://qiskit.github.io/samplomatic" target="_blank" rel="noopener noreferrer" class="">Documentação do Samplomatic</a></li>
