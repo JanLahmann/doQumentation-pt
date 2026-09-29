@@ -14,8 +14,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 <script src="https://unpkg.com/thebelab@0.4.0/lib/index.js" async></script>
 <script src="https://cloud.umami.is/script.js" defer="defer" data-website-id="97f347ac-e7ba-4be3-b26f-ab4b328bdbf2" data-domains="doqumentation.org"></script><link rel="stylesheet" href="/assets/css/styles.d115d309.css">
-<script src="/assets/js/runtime~main.3cd8b40c.js" defer="defer"></script>
-<script src="/assets/js/main.30c484c6.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.cca395b7.js" defer="defer"></script>
+<script src="/assets/js/main.c49b305c.js" defer="defer"></script>
 <link data-rh-hreflang rel="alternate" hreflang="en" href="https://doqumentation.org/guides/c-extension-for-python" /><link data-rh-hreflang rel="alternate" hreflang="de" href="https://de.doqumentation.org/guides/c-extension-for-python" /><link data-rh-hreflang rel="alternate" hreflang="es" href="https://es.doqumentation.org/guides/c-extension-for-python" /><link data-rh-hreflang rel="alternate" hreflang="fr" href="https://fr.doqumentation.org/guides/c-extension-for-python" /><link data-rh-hreflang rel="alternate" hreflang="it" href="https://it.doqumentation.org/guides/c-extension-for-python" /><link data-rh-hreflang rel="alternate" hreflang="pt" href="https://pt.doqumentation.org/guides/c-extension-for-python" /><link data-rh-hreflang rel="alternate" hreflang="ja" href="https://ja.doqumentation.org/guides/c-extension-for-python" /><link data-rh-hreflang rel="alternate" hreflang="fil" href="https://tl.doqumentation.org/guides/c-extension-for-python" /><link data-rh-hreflang rel="alternate" hreflang="ar" href="https://ar.doqumentation.org/guides/c-extension-for-python" /><link data-rh-hreflang rel="alternate" hreflang="he" href="https://he.doqumentation.org/guides/c-extension-for-python" /><link data-rh-hreflang rel="alternate" hreflang="ms" href="https://ms.doqumentation.org/guides/c-extension-for-python" /><link data-rh-hreflang rel="alternate" hreflang="id" href="https://id.doqumentation.org/guides/c-extension-for-python" /><link data-rh-hreflang rel="alternate" hreflang="th" href="https://th.doqumentation.org/guides/c-extension-for-python" /><link data-rh-hreflang rel="alternate" hreflang="ko" href="https://ko.doqumentation.org/guides/c-extension-for-python" /><link data-rh-hreflang rel="alternate" hreflang="pl" href="https://pl.doqumentation.org/guides/c-extension-for-python" /><link data-rh-hreflang rel="alternate" hreflang="ro" href="https://ro.doqumentation.org/guides/c-extension-for-python" /><link data-rh-hreflang rel="alternate" hreflang="uk" href="https://uk.doqumentation.org/guides/c-extension-for-python" /><link data-rh-hreflang rel="alternate" hreflang="cs" href="https://cs.doqumentation.org/guides/c-extension-for-python" /><link data-rh-hreflang rel="alternate" hreflang="x-default" href="https://doqumentation.org/guides/c-extension-for-python" /></head>
 <body>
 <svg style="display: none;"><defs>
@@ -48,7 +48,7 @@ Se você já programou uma extensão NumPy, achará o processo do Qiskit familia
 <p>O conjunto de ferramentas padrão do compilador C para sua plataforma</p>
 </li>
 <li class="">
-<p>Uma versão do Python que inclua seus headers de API C.</p>
+<p>Uma versão do Python que inclua os arquivos de cabeçalho da sua API C.</p>
 </li>
 </ul>
 <p>Você também deve estar familiarizado com, ou preparado para consultar, as funções e objetos disponíveis
@@ -182,7 +182,7 @@ argumentos de palavra-chave e as funções a usar para convertê-los. Se isso fa
 função propagará o erro.</p>
 </li>
 <li class="">
-<p>Delega para a lógica de negócio nativa em C da seção anterior, que muta o DAG no lugar.</p>
+<p>Delega à lógica de negócio nativa em C da seção anterior, que modifica o DAG diretamente (in-place).</p>
 </li>
 <li class="">
 <p>Retorna o objeto <code>None</code> do espaço Python.</p>
@@ -217,7 +217,7 @@ função de inicialização do seu módulo; você não conseguirá chamar nenhum
 até que isso tenha sido executado com sucesso.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="use-the-package-from-python">Usar o pacote a partir do Python<a href="#use-the-package-from-python" class="hash-link" aria-label="Link direto para Usar o pacote a partir do Python" title="Link direto para Usar o pacote a partir do Python" translate="no">​</a></h2>
 <p>Este é agora um pacote completo, incluindo um módulo de extensão C. Como apenas ferramentas
-padrão foram usadas e nenhuma biblioteca de sistema não padrão é vinculada durante o tempo de build,
+padrão foram usadas e nenhuma biblioteca de sistema não padrão é vinculada durante a compilação,
 o processo de build é simples.</p>
 <p>Você pode usar qualquer ferramenta de build compatível com PEP-517. Como exemplo mínimo, você pode executar o seguinte comando na raiz do repositório para instalar o pacote.</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">pip </span><span class="token function" style="color:#d73a49">install</span><span class="token plain"> </span><span class="token builtin class-name">.</span><br></div></code></pre></div></div>
