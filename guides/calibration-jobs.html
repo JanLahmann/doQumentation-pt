@@ -14,8 +14,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 <script src="https://unpkg.com/thebelab@0.4.0/lib/index.js" async></script>
 <script src="https://cloud.umami.is/script.js" defer="defer" data-website-id="97f347ac-e7ba-4be3-b26f-ab4b328bdbf2" data-domains="doqumentation.org"></script><link rel="stylesheet" href="/assets/css/styles.d115d309.css">
-<script src="/assets/js/runtime~main.0e907d9c.js" defer="defer"></script>
-<script src="/assets/js/main.939dd286.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.3af36f3a.js" defer="defer"></script>
+<script src="/assets/js/main.cb0939e1.js" defer="defer"></script>
 <link data-rh-hreflang rel="alternate" hreflang="en" href="https://doqumentation.org/guides/calibration-jobs" /><link data-rh-hreflang rel="alternate" hreflang="de" href="https://de.doqumentation.org/guides/calibration-jobs" /><link data-rh-hreflang rel="alternate" hreflang="es" href="https://es.doqumentation.org/guides/calibration-jobs" /><link data-rh-hreflang rel="alternate" hreflang="fr" href="https://fr.doqumentation.org/guides/calibration-jobs" /><link data-rh-hreflang rel="alternate" hreflang="it" href="https://it.doqumentation.org/guides/calibration-jobs" /><link data-rh-hreflang rel="alternate" hreflang="pt" href="https://pt.doqumentation.org/guides/calibration-jobs" /><link data-rh-hreflang rel="alternate" hreflang="ja" href="https://ja.doqumentation.org/guides/calibration-jobs" /><link data-rh-hreflang rel="alternate" hreflang="fil" href="https://tl.doqumentation.org/guides/calibration-jobs" /><link data-rh-hreflang rel="alternate" hreflang="ar" href="https://ar.doqumentation.org/guides/calibration-jobs" /><link data-rh-hreflang rel="alternate" hreflang="he" href="https://he.doqumentation.org/guides/calibration-jobs" /><link data-rh-hreflang rel="alternate" hreflang="ms" href="https://ms.doqumentation.org/guides/calibration-jobs" /><link data-rh-hreflang rel="alternate" hreflang="id" href="https://id.doqumentation.org/guides/calibration-jobs" /><link data-rh-hreflang rel="alternate" hreflang="th" href="https://th.doqumentation.org/guides/calibration-jobs" /><link data-rh-hreflang rel="alternate" hreflang="ko" href="https://ko.doqumentation.org/guides/calibration-jobs" /><link data-rh-hreflang rel="alternate" hreflang="pl" href="https://pl.doqumentation.org/guides/calibration-jobs" /><link data-rh-hreflang rel="alternate" hreflang="ro" href="https://ro.doqumentation.org/guides/calibration-jobs" /><link data-rh-hreflang rel="alternate" hreflang="uk" href="https://uk.doqumentation.org/guides/calibration-jobs" /><link data-rh-hreflang rel="alternate" hreflang="cs" href="https://cs.doqumentation.org/guides/calibration-jobs" /><link data-rh-hreflang rel="alternate" hreflang="x-default" href="https://doqumentation.org/guides/calibration-jobs" /></head>
 <body>
 <svg style="display: none;"><defs>
@@ -31,7 +31,7 @@
 <p>Alguns dos parâmetros monitorados incluem os seguintes:</p>
 <ul>
 <li class="">
-<p>Ângulos de leitura, amplitudes e limiar do discriminador, garantindo discriminação precisa de estados, baixo vazamento e operação estável. Isso inclui os parâmetros operacionais de nossos amplificadores quânticos limitados.</p>
+<p>Ângulos de leitura, amplitudes e limiar do discriminador, garantindo discriminação precisa de estados, baixo vazamento e operação estável. Isso inclui os parâmetros operacionais de nossos amplificadores limitados quanticamente (que operam no limite quântico de ruído).</p>
 </li>
 <li class="">
 <p>Operações de gates de qubit único e de dois qubits, confirmando que se comportam conforme o esperado para manter ângulos de rotação corretos e minimizar erros de fase e amplitude.</p>
@@ -82,10 +82,10 @@
 <p>Um job de calibração não pode ser executado simultaneamente enquanto um job ou sessão está em execução.</p>
 </li>
 <li class="">
-<p>Portanto, durante sessões longas, o computador quântico pode experimentar estabilidade efetiva reduzida devido a recalibração atrasada ou pouco frequente.</p>
+<p>Portanto, durante sessões longas, o computador quântico pode apresentar estabilidade efetiva reduzida devido a recalibração atrasada ou pouco frequente.</p>
 </li>
 <li class="">
-<p>Dois jobs submetidos ao mesmo tempo podem ser executados sob conjuntos de calibração diferentes, dependendo do timing.</p>
+<p>Dois jobs submetidos ao mesmo tempo podem ser executados sob conjuntos de calibração diferentes, dependendo do momento em que forem executados.</p>
 </li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="benchmarking">Benchmarking<a href="#benchmarking" class="hash-link" aria-label="Link direto para Benchmarking" title="Link direto para Benchmarking" translate="no">​</a></h2>
@@ -94,7 +94,7 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="single-qubit-performance">Desempenho de qubit único<a href="#single-qubit-performance" class="hash-link" aria-label="Link direto para Desempenho de qubit único" title="Link direto para Desempenho de qubit único" translate="no">​</a></h3>
 <ul>
 <li class="">
-<p><a class="" href="/guides/qpu-information#median-sx-error">Randomized benchmarking</a> (RB) em grupos agrupados</p>
+<p><a class="" href="/guides/qpu-information#median-sx-error">Randomized benchmarking</a> (RB) executado em lotes</p>
 </li>
 <li class="">
 <p>Tempos de coerência para <a class="" href="/guides/qpu-information#t1"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">T_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em"><span></span></span></span></span></span></span></span></span></span></a> e <a class="" href="/guides/qpu-information#t2"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">T_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em"><span></span></span></span></span></span></span></span></span></span></a></p>

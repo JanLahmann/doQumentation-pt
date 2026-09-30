@@ -14,8 +14,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 <script src="https://unpkg.com/thebelab@0.4.0/lib/index.js" async></script>
 <script src="https://cloud.umami.is/script.js" defer="defer" data-website-id="97f347ac-e7ba-4be3-b26f-ab4b328bdbf2" data-domains="doqumentation.org"></script><link rel="stylesheet" href="/assets/css/styles.d115d309.css">
-<script src="/assets/js/runtime~main.0e907d9c.js" defer="defer"></script>
-<script src="/assets/js/main.939dd286.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.3af36f3a.js" defer="defer"></script>
+<script src="/assets/js/main.cb0939e1.js" defer="defer"></script>
 <link data-rh-hreflang rel="alternate" hreflang="en" href="https://doqumentation.org/guides/qiskit-runtime-circuit-timing" /><link data-rh-hreflang rel="alternate" hreflang="de" href="https://de.doqumentation.org/guides/qiskit-runtime-circuit-timing" /><link data-rh-hreflang rel="alternate" hreflang="es" href="https://es.doqumentation.org/guides/qiskit-runtime-circuit-timing" /><link data-rh-hreflang rel="alternate" hreflang="fr" href="https://fr.doqumentation.org/guides/qiskit-runtime-circuit-timing" /><link data-rh-hreflang rel="alternate" hreflang="it" href="https://it.doqumentation.org/guides/qiskit-runtime-circuit-timing" /><link data-rh-hreflang rel="alternate" hreflang="pt" href="https://pt.doqumentation.org/guides/qiskit-runtime-circuit-timing" /><link data-rh-hreflang rel="alternate" hreflang="ja" href="https://ja.doqumentation.org/guides/qiskit-runtime-circuit-timing" /><link data-rh-hreflang rel="alternate" hreflang="fil" href="https://tl.doqumentation.org/guides/qiskit-runtime-circuit-timing" /><link data-rh-hreflang rel="alternate" hreflang="ar" href="https://ar.doqumentation.org/guides/qiskit-runtime-circuit-timing" /><link data-rh-hreflang rel="alternate" hreflang="he" href="https://he.doqumentation.org/guides/qiskit-runtime-circuit-timing" /><link data-rh-hreflang rel="alternate" hreflang="ms" href="https://ms.doqumentation.org/guides/qiskit-runtime-circuit-timing" /><link data-rh-hreflang rel="alternate" hreflang="id" href="https://id.doqumentation.org/guides/qiskit-runtime-circuit-timing" /><link data-rh-hreflang rel="alternate" hreflang="th" href="https://th.doqumentation.org/guides/qiskit-runtime-circuit-timing" /><link data-rh-hreflang rel="alternate" hreflang="ko" href="https://ko.doqumentation.org/guides/qiskit-runtime-circuit-timing" /><link data-rh-hreflang rel="alternate" hreflang="pl" href="https://pl.doqumentation.org/guides/qiskit-runtime-circuit-timing" /><link data-rh-hreflang rel="alternate" hreflang="ro" href="https://ro.doqumentation.org/guides/qiskit-runtime-circuit-timing" /><link data-rh-hreflang rel="alternate" hreflang="uk" href="https://uk.doqumentation.org/guides/qiskit-runtime-circuit-timing" /><link data-rh-hreflang rel="alternate" hreflang="cs" href="https://cs.doqumentation.org/guides/qiskit-runtime-circuit-timing" /><link data-rh-hreflang rel="alternate" hreflang="x-default" href="https://doqumentation.org/guides/qiskit-runtime-circuit-timing" /></head>
 <body>
 <svg style="display: none;"><defs>
@@ -49,16 +49,16 @@ Recomendamos usar essas versões ou versões mais recentes.</p><div class="langu
 <p><code>Branch</code> - Determina se a instrução está em um fluxo de controle (then / else) ou em um branch principal.</p>
 </li>
 <li class="">
-<p><code>Instruction</code> - O gate e o qubit a operar.</p>
+<p><code>Instruction</code> - O gate e o qubit sobre o qual ele atua.</p>
 </li>
 <li class="">
-<p><code>Channel</code> - O canal que está sendo atribuído com a instrução. Pode ser um dos seguintes:</p>
+<p><code>Channel</code> - O canal ao qual a instrução é atribuída. Pode ser um dos seguintes:</p>
 <ul>
 <li class="">
 <p><code>Qubit x</code> - O canal de drive para o qubit <em>x</em>.</p>
 </li>
 <li class="">
-<p><code>AWGRx_y</code> (gerador de forma de onda arbitrária de leitura) - Usado por canais de leitura para comunicar quando medir qubits. Os argumentos <em>x</em> e <em>y</em> correspondem ao ID do instrumento de leitura e ao número do qubit, respectivamente.</p>
+<p><code>AWGRx_y</code> (gerador de forma de onda arbitrária de leitura) - Usado pelos canais de leitura para se comunicarem durante a medição dos qubits. Os argumentos <em>x</em> e <em>y</em> correspondem ao ID do instrumento de leitura e ao número do qubit, respectivamente.</p>
 </li>
 </ul>
 </li>
@@ -95,7 +95,7 @@ Recomendamos usar essas versões ou versões mais recentes.</p><div class="langu
 <p><code>Qubit x</code> - O canal de drive para o qubit x.</p>
 </li>
 <li class="">
-<p><code>AWGRx_y</code> (gerador de forma de onda arbitrária de leitura) - Usado por canais de leitura para comunicar quando medir qubits. Os argumentos <em>x</em> e <em>y</em> correspondem ao ID do instrumento de leitura e ao número do qubit, respectivamente.</p>
+<p><code>AWGRx_y</code> (gerador de forma de onda arbitrária de leitura) - Usado pelos canais de leitura para se comunicarem durante a medição dos qubits. Os argumentos <em>x</em> e <em>y</em> correspondem ao ID do instrumento de leitura e ao número do qubit, respectivamente.</p>
 </li>
 <li class="">
 <p><code>Hub</code> - Controla o broadcasting.</p>
